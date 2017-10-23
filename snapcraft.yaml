@@ -10,9 +10,6 @@ description: |
 confinement: strict
 grade: devel
 
-environment:
-  LD_LIBRARY_PATH: $LD_LIBRARY_PATH:$SNAP/usr/lib/x86_64-linux-gnu/ceph
-
 apps:
   uwsgi:
     command: run-wrap snap-openstack gnocchi-uwsgi
