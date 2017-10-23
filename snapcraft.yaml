@@ -15,7 +15,7 @@ environment:
 
 apps:
   uwsgi:
-    command: snap-openstack gnocchi-uwsgi
+    command: run-wrap snap-openstack gnocchi-uwsgi
     daemon: simple
     plugs:
       - network-bind
@@ -25,20 +25,20 @@ apps:
     plugs:
       - network-bind
   metricd:
-    command: snap-openstack gnocchi-metricd
+    command: run-wrap snap-openstack gnocchi-metricd
     daemon: simple
     plugs:
       - network-bind
   upgrade:
-    command: snap-openstack gnocchi-upgrade
+    command: run-wrap snap-openstack gnocchi-upgrade
     plugs:
       - network
   change-sack-size:
-    command: snap-openstack gnocchi-change-sack-size
+    command: run-wrap snap-openstack gnocchi-change-sack-size
     plugs:
       - network
   config-generator:
-    command: snap-openstack gnocchi-config-generator
+    command: run-wrap snap-openstack gnocchi-config-generator
     plugs:
       - network
 
